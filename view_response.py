@@ -32,17 +32,24 @@ def verifica_cache_control(file_path):
                     cf_cache_status = f"{Fore.GREEN}{cf_cache_status} {Style.RESET_ALL}"
                 elif cf_cache_status == 'EXPIRED':
                     cf_cache_status = f"{Fore.YELLOW}{cf_cache_status} {Style.RESET_ALL}"
+                elif cf_cache_status == 'DYNAMIC':
+                    cf_cache_status = f"{Fore.YELLOW}{cf_cache_status} {Style.RESET_ALL}"
                 else:
                     cf_cache_status = f"{Fore.BLUE}{cf_cache_status} {Style.RESET_ALL}"
-                
-                
-                # Verificar condições de max-age e definir cor
-                if max_age > 100:
-                    print(f"{Fore.YELLOW}{url} | Cache-Control: {cache_control} | CF-Cache-Status: {cf_cache_status} | CF-Ray: {cf_ray} | Tempo de Resposta: {response_time:.2f}s")
-                elif max_age == 60:
-                    print(f"{url} | Cache-Control: {cache_control} | CF-Cache-Status: {cf_cache_status} | CF-Ray: {cf_ray} | Tempo de Resposta: {response_time:.2f}s")
+
+                bests_cf_ray_datacenter = ['GIG', 'GRU']
+                if not cf_ray in bests_cf_ray_datacenter:
+                    cf_ray = f"{Fore.YELLOW}{cf_ray} {Style.RESET_ALL}"
+
+                if max_age > 200:
+                    max_age = f"{Fore.RED}Max-age: {max_age} {Style.RESET_ALL}"
+                elif max_age > 100:
+                    max_age = f"{Fore.YELLOW}Max-age: {max_age} {Style.RESET_ALL}"
                 else:
-                    print(f"{url} | Cache-Control: {cache_control} | CF-Cache-Status: {cf_cache_status} | CF-Ray: {cf_ray} | Tempo de Resposta: {response_time:.2f}s")
+                    max_age = "Max-age: " + str(max_age)
+                
+                
+                print(f"{url} | Cache-Control: {cache_control} | {max_age} | CF-Cache-Status: {cf_cache_status} | CF-Ray: {cf_ray} | Tempo de Resposta: {response_time:.2f}s")
             
         except Exception as e:
             print(f"Erro ao acessar {url}: {e}")
