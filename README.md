@@ -1,6 +1,6 @@
 # Verificação de Cache-Control para URLs
 
-Este script em Python verifica o cabeçalho `Cache-Control` de uma lista de URLs fornecidas em um arquivo de texto, ajudando a analisar informações de cache e desempenho.
+Este script em Python verifica o cabeçalho `Cache-Control` de uma lista de URLs fornecidas em um arquivo de texto, ajudando a analisar informações de cache e desempenho de páginas web que usam cloudflare ou outros serviços de cache.
 
 ## Funcionalidades
 
