@@ -31,7 +31,7 @@ def verifica_cache_control(file_path):
                 if cf_cache_status == 'HIT':
                     cf_cache_status = f"{Fore.GREEN}{cf_cache_status} {Style.RESET_ALL}"
                 elif cf_cache_status == 'EXPIRED':
-                    cf_cache_status = f"{Fore.YELLOW}{cf_cache_status} {Style.RESET_ALL}"
+                    cf_cache_status = f"{Fore.BLUE}{cf_cache_status} {Style.RESET_ALL}"
                 elif cf_cache_status == 'DYNAMIC':
                     cf_cache_status = f"{Fore.YELLOW}{cf_cache_status} {Style.RESET_ALL}"
                 else:
