@@ -37,7 +37,7 @@ def verifica_cache_control(file_path):
                 else:
                     cf_cache_status = f"{Fore.BLUE}{cf_cache_status} {Style.RESET_ALL}"
 
-                bests_cf_ray_datacenter = ['GIG', 'GRU']
+                bests_cf_ray_datacenter = ["QWJ","BEL","CNF","BNU","BSB","CFC","VCP","CGB","CWB","FLN","FOR","GYN","ITJ","JOI","JDO","MAO","POA","REC","RAO","GIG","SJP","SJK","GRU","SOD","NVT","UDI","VIX","CAW","XAP","PMW","ARU","SSA"]
                 if not cf_ray in bests_cf_ray_datacenter:
                     cf_ray = f"{Fore.YELLOW}{cf_ray} {Style.RESET_ALL}"
 
