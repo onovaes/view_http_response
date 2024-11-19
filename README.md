@@ -64,5 +64,3 @@ view_http_response/
 https://exemplo.com
 https://outro-exemplo.com
 ```
-
-**Observação:** Em versões futuras, o projeto poderá ser registrado como um pacote Python.
