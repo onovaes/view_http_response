@@ -11,17 +11,9 @@ Este script em Python verifica o cabeçalho `Cache-Control` de uma lista de URLs
 
 ## Pré-requisitos
 
-Este script requer Python 3.x e as bibliotecas `requests` e `colorama`.
+Python 3
 
-### Instalação das Dependências
 
-Instale as dependências com:
-
-```bash
-pip install requests colorama
-```
-
-## Instalação via Git (Clone)
 
 1. **Clone o repositório**:
 
@@ -29,11 +21,28 @@ pip install requests colorama
     git clone https://github.com/onovaes/view_http_response.git
     cd view_http_response
     ```
+## Instalação (opção 1)
 
-2. **Instale as dependências** (caso use virtualenv, crie e ative o ambiente):
+    Instale as dependências 
 
     ```bash
     pip install -r requirements.txt
+    ```
+
+## Instalação com virtualenv (opção 2)
+
+    
+    Use um ambiente virtual para instalar seus pacotes, assim você evita mexer no sistema e mantém o projeto isolado:
+
+    ```bash
+    # Crie o ambiente virtual (uma vez)
+    python3 -m venv .venv
+
+    # Ative o ambiente virtual
+    source .venv/bin/activate
+
+    # Instale os pacotes a partir do arquivo de requisitos
+    pip3 install -r requirements.txt
     ```
 
 ## Uso do Script
@@ -45,17 +54,6 @@ pip install requests colorama
     ```bash
     python verifica_cache.py
     ```
-
-## Estrutura do Projeto
-
-```
-view_http_response/
-│
-├── verifica_cache.py        # Código do script principal
-├── urls.txt                 # Arquivo de URLs para leitura
-├── requirements.txt         # Arquivo de dependências
-└── README.md                # Instruções de uso e instalação
-```
 
 ## Exemplo de Arquivo `urls.txt`
 
